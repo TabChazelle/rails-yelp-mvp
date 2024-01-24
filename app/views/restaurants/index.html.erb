@@ -1,0 +1,49 @@
+<h1>Restaurants</h1>
+
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+     <%= link_to restaurant.name, restaurant_path(restaurant) %><br>
+    </li>
+
+  <% end %>
+</ul>
+    <div>
+  <%= link_to "Add a New Restaurant", new_restaurant_path %>
+</div>
+ <%#
+<h2>Filter!</h2>
+<%= simple_form_for @restaurant do |f| %>
+ <%#
+  <%= f.input :name %>
+  <%#
+  <%= f.input :address %>
+   <%#
+  <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"], include_blank: true %>
+ <%#
+  <%= f.button :submit, "Filter", type: "submit" %>
+   <%#
+<% end %>
+
+<%#
+<h3>Filter Result</h3>
+<% if @filtered_restaurants %>
+<%#
+  <ul>
+    <% @filtered_restaurants.each do |restaurant| %>
+ <%#
+      <li>
+        <strong>Name:</strong> <%= restaurant.name %><br>
+ <%#
+        <strong>Address:</strong> <%= restaurant.address %><br>
+  <%#
+        <strong>Category:</strong> <%= restaurant.category %>
+  <%#
+      </li>
+    <% end %>
+ <%#
+  </ul>
+<% else %>
+ <%#
+  <p>No filters applied.</p>
+<% end %>
